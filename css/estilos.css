@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons&family=Open+Sans+Condensed:wght@300;700&family=Roboto:wght@300;700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.logo-navbar {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+}
+
+.separa-margen-derecho {
+    margin-right: 10%;
+}
+
+.separa-margen-izquierdo {
+    margin-right: 10%;
+}
+
+h1 {
+    font-size: 90px;
+    font-weight: 900;
+    font-stretch: wider;
+}

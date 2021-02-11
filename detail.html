@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <title>ErcMax Gaming</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no"/>
+      <meta name="Description" content="PWA de video streaming">
+      <meta name="theme-color" content="#000000">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-title" content="Trailerflix">
+      <meta name="apple-mobile-web-app-status-bar-style" content="transluscent">
+      <link rel="preconnect" href="https://fonts.gstatic.com"> 
+      <link rel="stylesheet" href="css/materialize.min.css">
+      <link rel="stylesheet" href="css/estilos.css">     
+      <script src="materialize.min.js"></script>
+      <script src="JQuery-3.5.1.min.js"></script>
+      <script src="productDetail.js"></script>
+  </head> 
+  <body class="black">
+    <div class="navbar-fixed">
+      <nav style="display: none;">
+        <div class="nav-wrapper black">
+          <a class="brand-logo logo-navbar right black blue-text separa-margen-derecho">ErcMac GAMING</a>
+          <a  id="retornar" class="black red-text waves-effect waves-red">VOLVER<i class="material-icons red-text left">arrow_back</i></a>
+        </div>
+      </nav>  
+    </div>
+    <div class="center" id="encabezado">
+        <h4 style="display: none;" class="white-text">Información de contenido</h4>
+    </div>
+    <div id="contenido" class="row center" style="display: none;" >
+      <!--Aquì se carga el detalle, desde LocalStorage -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ErcMax Gaming</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/tailwind.min.css" media="screen,projection" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <script src="DOMBuilder.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="contact.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg style="background-color: #0c0e0f;">
+        <a class="navbar-brand" style="font-size: 20px;line-height: 39px;letter-spacing: -0.089em;font-style: normal;"><img src="img/ercmaxLogo.png" width="70"></a>
+        <a class="navbar-brand" href="#">Venta de hardware gaming</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="link2">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="link3">Contactos</a>
+              </li>
+          </ul>
+          <ul>
+            <li class="submenu">
+                <img src="img/cart.png" id="img-carrito">
+                <div id="carrito">
+
+                    <table id="lista-carrito" class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <button id="vaciar-carrito" class="btn-outline-danger" style="padding-left: 30px;border-top-width: 1px;margin-top: 10px;margin-bottom: 10px;margin-left: 44px;">Vaciar Carrito</button>
+                    <button id="comprar-carrito" class="btn-outline-success" style="padding-left: 30px;border-top-width: 1px;margin-top: 10px;margin-bottom: 10px;margin-left: 66px;" >COMPRAR</button>
+                </div>
+            </li>
+        </ul>
+        </div>
+      </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+        </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <section class="features-icons text-center ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-3 ">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 ">
+                        <div class="features-icons-icon d-flex ">
+                            <i class="bi bi-cpu m-auto text-primary " onclick="selectedProcessors()"><svg xmlns="http://www.w3.org/2000/svg " width="80 " height="80 " fill="currentColor " class="bi bi-cpu " viewBox="0 0 16 16 ">
+                              <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5
+                        0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0
+                        0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5
+                        6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z "/>
+                            </svg></i>
+
+                        </div>
+                        <h3 class="materials text-primary ">Procesadores</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 ">
+                        <div class="features-icons-icon d-flex ">
+                            <i class="fas fa-gamepad m-auto text-primary " onclick="selectVideos()"></i>
+                        </div>
+                        <h3 class="materials text-primary ">Placas de video</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3 ">
+                        <div class="features-icons-icon d-flex ">
+                            <i class="fas fa-memory m-auto text-primary " onclick="selectMemories()"></i>
+                        </div>
+                        <h3 class="materials text-primary ">Memorias RAM</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3 ">
+                        <div class="features-icons-icon d-flex ">
+                            <i class="bi bi-speaker-fill m-auto text-primary " onclick="selectCabinets()"><svg xmlns="http://www.w3.org/2000/svg " width="80 " height="80 " fill="currentColor " class="bi bi-speaker-fill " viewBox="0 0 16 16 ">
+                              <path d="M9 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-2.5 6.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z "/>
+                              <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm6 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z "/>
+                            </svg></i>
+                        </div>
+                        <h3 class="materials text-primary ">Gabinetes</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div id="productContainer" class="row">
+
+            </div>
+            <div id="selectProductsContainer" class="row">
+
+            </div>
+        
+
+    </section>
+
+    <section class="showcase" style="background-color:#b1c3d6;">
+        <div class="container-fluid p-0">
+          <div class="row no-gutters">
+    
+            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/contact.jpg');"></div>
+                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <p style="color: #060607; font-size: 48px;line-height: 0px;" >Contactanos!</p>
+                <div id="contactContainer">
+                    <form id="enviar-mail" class="py-10 px-5 max-w-lg mx-auto text-black">
+                        <div class="mb-10">
+                            <label for="email" style="color: #060607">Email:</label>
+                            <input class="bg-gray-100 border shadow p-3 w-full" id="email" type="email">
+                        </div>
+                        <div class="mb-10">
+                            <label for="asunto" style="color: #060607">Asunto</label>
+                            <input class="bg-gray-100 border shadow p-3 w-full" id="asunto" type="text">
+                        </div>
+                        <div class="mb-10">
+                            <label for="mensaje" style="color: #060607">Mensaje</label>
+                            <textarea class="bg-gray-100 border shadow p-3 w-full" id="mensaje"></textarea>
+                        </div>
+                        <div id="spinner">
+                            <div class="sk-chase">
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                            </div>
+                        </div>
+            
+                        <div class="flex justify-between">
+                            <button id="enviar" class="w-full bg-blue-600 px-2 py-5 text-white items-center cursor-not-allowed opacity-50 mr-5 uppercase font-bold items-center flex justify-center" type="submit">Enviar
+                                </button>
+            
+                            <button id="resetBtn" class="w-full bg-green-600 px-2 py-5 text-white items-center uppercase font-bold items-center flex justify-center" type="submit">Resetear Form
+                                </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto ">
+                    <ul class="list-inline mb-2 ">
+                        <li class="list-inline-item ">
+                            <a href="# ">About</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Contact</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0 ">&copy; Your Website 2020. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 h-100 text-center text-lg-right my-auto ">
+                    <ul class="list-inline mb-0 ">
+                        <li class="list-inline-item mr-3 ">
+                            <a href="# ">
+                                <i class="fab fa-facebook fa-2x fa-fw "></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3 ">
+                            <a href="# ">
+                                <i class="fab fa-twitter-square fa-2x fa-fw "></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item ">
+                            <a href="# ">
+                                <i class="fab fa-instagram fa-2x fa-fw "></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js "></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+
+</body>
+
+</html>
