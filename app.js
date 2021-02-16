@@ -10,10 +10,13 @@ let products = [];
 let productContainer = $('#productContainer');
 let purchaseCart = $('#comprar-carrito');
 let JSONcontent = [];
+let locationOption = $('#locationContainer');
+let JSONdate = [];
 
 
 $(document).ready(function() {
     loadContentProducts();
+    loadLocationAPI();
     cart.click(deleteProduct);
     clearCart.click(clearProducts);
     purchaseCart.click(purchase);
@@ -41,6 +44,49 @@ function loadContentProducts(){
             productContainer.append(HTMLCard);
         }
     })
+}
+
+function loadLocationAPI(){
+    $.ajax({
+        type: 'GET',
+        crossDomain: true,
+        url: "https://apis.datos.gob.ar/georef/api/provincias",
+        dataType: "json",
+        success: function(JSONdate){
+            localStorage.JSONdate = JSON.stringify(JSONdate.provincias);
+            JSONdate = JSON.parse(localStorage.JSONdate);
+            let div = document.createElement('div');
+            let select = document.createElement('select');
+            let optionSelect = document.createElement('option');
+            optionSelect.textContent='Seleccione';
+            select.appendChild(optionSelect);
+            select.classList.add('form-control');
+            JSONdate.forEach(function(date){
+                console.log(date.nombre);
+                
+                let option = document.createElement('option');
+                option.value = date.nombre;
+                option.textContent = date.nombre;
+                select.appendChild(option)
+            })
+            div.appendChild(select)
+            locationOption.append(div)
+        },
+        error: function(){
+            console.log('No se encontraron los datos.');
+        }
+    })
+}
+
+function buildFormLocation(date){
+    let div = document.createElement('div');
+    let select = document.createElement('select');
+    select.classList.add('form-control');
+    let option = document.createElement('option');
+    option.value = date.nombre;
+    option.textContent = date.nombre;
+    select.appendChild(option)
+    div.appendChild(select);
 }
 
 function buildProductCard(product) {
@@ -218,7 +264,20 @@ function clearHTML() {
 }
 
 function purchase() {
-    alert('El total del carrito es de: $' + totalCart());
+    // Respuesta, El total del carrito es XX desea comprarlo? si acepta, cambiar por ejemplo el cambio de cursor a ESPERA document.body.style.cursor = "progress"
+    // después un setTimeOut y restituir el puntero del mouse y agradecer la compra document.body.style.cursor = "default", vaciar el carrito y localStorage y refrescar la home
+    let answer = confirm('El total del carrito es: '+totalCart()+'. Desea comprarlo?')
+    if(answer){
+        document.body.style.cursor = "progress";
+        setTimeout(()=>{
+            document.body.style.cursor = "default";
+            clearProducts()
+            alert('Muchas gracias por comprar en ErcMax Gaming!.');
+            location.reload()
+        },2000)
+        
+    }
+    
 }
 
 function totalCart() {
