@@ -163,16 +163,12 @@
                             <label for="mensaje" style="color: #060607">Mensaje</label>
                             <textarea class="bg-gray-100 border shadow p-3 w-full" id="mensaje"></textarea>
                         </div>
-                        <div id="spinner">
-                            <div class="sk-chase">
-                                <div class="sk-chase-dot"></div>
-                                <div class="sk-chase-dot"></div>
-                                <div class="sk-chase-dot"></div>
-                                <div class="sk-chase-dot"></div>
-                                <div class="sk-chase-dot"></div>
-                                <div class="sk-chase-dot"></div>
-                            </div>
-                        </div>
+                        
+                        <div id='spinner' class="spinner-border text-primary" role="status" style="display: none; margin-left: 184px;">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+
+                        
             
                         <div class="flex justify-between">
                             <button id="enviar" class="w-full bg-blue-600 px-2 py-5 text-white items-center cursor-not-allowed opacity-50 mr-5 uppercase font-bold items-center flex justify-center" type="submit">Enviar

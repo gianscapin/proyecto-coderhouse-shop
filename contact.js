@@ -110,7 +110,6 @@ function showError(message) {
 
 function sendEmail(event) {
     event.preventDefault();
-
     // Mostrar spinner
 
     const spinner = document.getElementById('spinner');
@@ -120,11 +119,9 @@ function sendEmail(event) {
 
     setTimeout(function() {
         spinner.style.display = 'none';
-
         const p = document.createElement('p');
         p.textContent = 'El mensaje se envió correctamente.';
         p.classList.add('text-center', 'my-10', 'p-5', 'bg-green-500', 'text-white', 'font-bold', 'uppercase');
-
         // Inserta el parrafo antes del spinner en el HTML
         form.insertBefore(p, spinner);
         setTimeout(function() {

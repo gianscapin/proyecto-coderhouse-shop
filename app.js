@@ -12,6 +12,7 @@ let purchaseCart = $('#comprar-carrito');
 let JSONcontent = [];
 let locationOption = $('#locationContainer');
 let JSONdate = [];
+let shippingCost;
 
 
 $(document).ready(function() {
@@ -58,24 +59,51 @@ function loadLocationAPI(){
             let div = document.createElement('div');
             let select = document.createElement('select');
             let optionSelect = document.createElement('option');
+            let btn = document.createElement('button');
+            btn.style = "border-left-width: 1px;margin-left: 160px;margin-top: 20px;";
+            btn.classList.add('btn-primary');
+            btn.textContent = 'Calcular envío';
+            btn.id = 'buttonShip'
             optionSelect.textContent='Seleccione';
+            btn.addEventListener('click', calculateShipping);
             select.appendChild(optionSelect);
             select.classList.add('form-control');
+            select.id = 'locationForm';
             JSONdate.forEach(function(date){
-                console.log(date.nombre);
-                
                 let option = document.createElement('option');
                 option.value = date.nombre;
                 option.textContent = date.nombre;
                 select.appendChild(option)
             })
             div.appendChild(select)
+            div.appendChild(btn)
             locationOption.append(div)
         },
         error: function(){
             console.log('No se encontraron los datos.');
         }
     })
+}
+
+function calculateShipping(){
+    const shipLocation = $('#locationForm').val();
+    if(shipLocation=='Buenos Aires' || shipLocation=='Ciudad Autónoma de Buenos Aires'){
+        shippingCost = 200;
+    }else if(shipLocation=='Córdoba'||shipLocation=='Santa Fe'){
+        shippingCost = 400;
+    }else{
+        shippingCost = 500;
+    }
+    let spinnerShip =` <div id='spinnerShip' class="spinner-border text-primary" role="status" style="margin-left: 232px; margin-top: 30px>
+    <span class="sr-only"></span>
+  </div>`;
+    locationOption.append(spinnerShip)
+    console.log(shippingCost);
+    setTimeout(()=>{
+    let shipSpinner = document.getElementById('spinnerShip')
+    $('#spinnerShip').hide("fast");
+    },2000)
+    
 }
 
 function buildFormLocation(date){
