@@ -294,7 +294,12 @@ function clearHTML() {
 function purchase() {
     // Respuesta, El total del carrito es XX desea comprarlo? si acepta, cambiar por ejemplo el cambio de cursor a ESPERA document.body.style.cursor = "progress"
     // después un setTimeOut y restituir el puntero del mouse y agradecer la compra document.body.style.cursor = "default", vaciar el carrito y localStorage y refrescar la home
-    let answer = confirm('El total del carrito es: '+totalCart()+'. Desea comprarlo?')
+    if(shippingCost>0){
+        answer = confirm('El total del carrito es: $'+totalCart()+'. El costo de envío es de: $'+shippingCost+'. Desea comprarlo?')
+    }else{
+        alert('Atención!, no se seleccionó la ubicación para calcular el costo del envío.')
+        answer = confirm('El total del carrito es: $'+totalCart()+'. Desea comprarlo?')
+    }
     if(answer){
         document.body.style.cursor = "progress";
         setTimeout(()=>{
