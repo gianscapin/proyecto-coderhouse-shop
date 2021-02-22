@@ -94,15 +94,24 @@ function calculateShipping(){
     }else{
         shippingCost = 500;
     }
-    let spinnerShip =` <div id='spinnerShip' class="spinner-border text-primary" role="status" style="margin-left: 232px; margin-top: 30px>
-    <span class="sr-only"></span>
+    let spinnerShip =` <div id='spinnerShip' class="spinner-border text-primary" role="status" style="margin-left: 232px; margin-top: 30px;">
   </div>`;
     locationOption.append(spinnerShip)
-    console.log(shippingCost);
+    let alert = `<div id="alertShipping" class="alert alert-success" role="alert" style="display: none;">
+    COSTO DE ENVÍO CALCULADO!
+  </div>`;
+    $(alert).insertBefore(locationOption);
     setTimeout(()=>{
-    let shipSpinner = document.getElementById('spinnerShip')
-    $('#spinnerShip').hide("fast");
-    },2000)
+        $('#spinnerShip').hide("fast");
+    },2000);
+    setTimeout(()=>{
+        $('#alertShipping').show("fast");
+        setTimeout(()=>{
+            $('#alertShipping').hide("fast");
+        },5500)
+    },3000);
+    
+    console.log(shippingCost);
     
 }
 
