@@ -47,6 +47,7 @@ class DOMBuilder {
         div.classList.add('card')
         div.classList.add('bg-dark')
         div.classList.add('border-primary')
+        div.classList.add('mx-auto')
         div.style = 'width: 18rem; margin-bottom: 10px;';
         div.innerHTML = `<img src="${image}" class="card-img-top" alt="...">`
         return div;
